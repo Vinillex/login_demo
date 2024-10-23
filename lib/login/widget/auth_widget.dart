@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/widgets.dart';
 import 'package:login_ui/login/widget/primary_button.dart';
 import 'package:login_ui/login/widget/secondary_button.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class AuthWidget extends StatelessWidget {
   const AuthWidget({super.key});
@@ -9,24 +10,24 @@ class AuthWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 320,
+      height: ResponsiveBreakpoints.of(context).isMobile ? 280 : 320,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const AutoSizeText(
+          AutoSizeText(
             'Join our \ncommunity today',
             style: TextStyle(
-              fontSize: 32,
+              fontSize: ResponsiveBreakpoints.of(context).isMobile ? 24 : 32,
               fontWeight: FontWeight.w700,
             ),
             maxLines: 2,
           ),
-          const AutoSizeText(
+          AutoSizeText(
             'Get connected, find designers to start a project',
             style: TextStyle(
               fontWeight: FontWeight.w300,
-              fontSize: 20,
+              fontSize: ResponsiveBreakpoints.of(context).isMobile ? 14 : 20,
             ),
             maxLines: 2,
           ),
@@ -35,8 +36,8 @@ class AuthWidget extends StatelessWidget {
             text: 'Sign up',
             onTap: () {},
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: ResponsiveBreakpoints.of(context).isMobile ? 10 : 20,
           ),
           const Align(
             child: AutoSizeText(
@@ -47,8 +48,8 @@ class AuthWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: ResponsiveBreakpoints.of(context).isMobile ? 10 : 20,
           ),
           Row(
             children: [

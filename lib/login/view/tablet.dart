@@ -4,10 +4,15 @@ import 'package:login_ui/login/widget/email_text_field.dart';
 import 'package:login_ui/login/widget/password_text_field.dart';
 import 'package:login_ui/login/widget/primary_button.dart';
 import 'package:login_ui/login/widget/special_mobile_header.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Tablet extends StatelessWidget {
-  const Tablet(
-      {required this.emailController, required this.passwordController, required this.onTap, super.key,});
+  const Tablet({
+    required this.emailController,
+    required this.passwordController,
+    required this.onTap,
+    super.key,
+  });
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final void Function() onTap;
@@ -33,11 +38,13 @@ class Tablet extends StatelessWidget {
                   height: 20,
                 ),
                 SizedBox(
-                  height: 100,
+                  height:
+                      ResponsiveBreakpoints.of(context).isMobile ? 120 : 100,
                   child: EmailTextField(controller: emailController),
                 ),
                 SizedBox(
-                  height: 100,
+                  height:
+                      ResponsiveBreakpoints.of(context).isMobile ? 120 : 100,
                   child: PasswordTextField(
                     controller: passwordController,
                   ),
